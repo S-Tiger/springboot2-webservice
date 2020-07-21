@@ -24,7 +24,7 @@
         {{#posts}} <!--머스테치 문법 posts라는 List를 순회 for문과 동일하다 생각하면 된다-->
             <tr>
                 <td>{{id}}</td> <!--List에서 뽑아낸 객체 필드명-->
-                <td>{{title}}</td>
+                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
                 <td>{{author}}</td>
                 <td>{{modifiedDate}}</td>
             </tr>

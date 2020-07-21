@@ -1,6 +1,7 @@
 package com.sungho.book.springboot.domain.posts;
 
 
+import com.sungho.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter //롬복의 어노테이션 클래스 내 모든 필드의 Getter 메소드를 자동생성
 @NoArgsConstructor //롬복의 어노테이션 기본 생성자 자동추가
 @Entity //JPA 어노테이션
-public class Posts { //실제 DB의 매칭될 클래스
+public class Posts extends BaseTimeEntity { //실제 DB의 매칭될 클래스
 
     @Id //해당 테이블의 PK 필드를 나타내는 어노테이션
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK의 규칙을 나타내는 어노테이션
@@ -30,6 +31,11 @@ public class Posts { //실제 DB의 매칭될 클래스
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title,String content){
+        this.title = title;
+        this.content = content;
     }
 
 }

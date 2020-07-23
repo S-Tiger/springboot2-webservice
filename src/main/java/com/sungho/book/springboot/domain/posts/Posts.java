@@ -27,15 +27,14 @@ public class Posts extends BaseTimeEntity { //실제 DB의 매칭될 클래스
     private String author;
 
     @Builder //롬복의 어노테이션 해당 클래스의 빌더 패턴 클래스를 생성, 생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함
-    public Posts(String title,String content, String author){
+    public Posts(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;
     }
 
-    public void update(String title,String content){
+    public void update(String title, String content) {
         this.title = title;
         this.content = content;
     }
-
 }

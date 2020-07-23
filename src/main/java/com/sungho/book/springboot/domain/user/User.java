@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Getter
-@NoArgsConstructor
-@Entity
+@NoArgsConstructor //롬복의 어노테이션 기본 생성자 자동추가
+@Entity //JPA 어노테이션
 public class User extends BaseTimeEntity {
 
     @Id
@@ -25,7 +25,7 @@ public class User extends BaseTimeEntity {
     @Column
     private String picture;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) //Enum값을 어떤형태로 저장할지 결정 기본적으로는 int로된 숫자가 저장
     @Column(nullable = false)
     private Role role;
 

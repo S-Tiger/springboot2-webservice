@@ -39,10 +39,11 @@ public class PostsService {
         return new PostsResponseDto(entity);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true) //트랜잭션 범위는 유지하되 조회 속도가 개선
     public List<PostsListRseponseDto> findAllDesc(){
         return postsRepository.findAllDesc().stream().map(PostsListRseponseDto::new).collect(Collectors.toList());
-    }
+    }//.map(posts -> new PostsListResponseDto(posts)) : postsRepository 결과로 넘어온 Posts의 Stream을 map을 통해
+    //PostsListResponseDto 변환 -> collect이용 List로 반환하는 메소드.
 
     @Transactional
     public void delete (Long id){

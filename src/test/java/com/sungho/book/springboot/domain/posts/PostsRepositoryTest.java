@@ -15,7 +15,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest //H2 데이터베이스를 자동으로 실행함
+@SpringBootTest //H2 데이터베이스를 자동으로 실행함 @WebMvcTest경우 JPA기능이 작동하지 않기 때문에 사용
 public class PostsRepositoryTest {
 
     @Autowired
